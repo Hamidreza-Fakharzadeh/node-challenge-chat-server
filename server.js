@@ -37,6 +37,7 @@ app.post("/messages", (request, response) => {
     from: request.body.from,
     text: request.body.text
   })
+  response.json({"message sending": true})
 })
 app.listen(process.env.PORT || 5000);
 console.log("hi")
