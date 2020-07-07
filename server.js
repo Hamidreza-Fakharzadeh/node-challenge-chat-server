@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
+
 const app = express();
 
 app.use(cors());
@@ -18,6 +19,10 @@ const messages = [welcomeMessage];
 
 app.get("/", function (request, response) {
   response.sendFile(__dirname + "/index.html");
+});
+
+app.get("/messages", function (request, response) {
+  response.json(messages);
 });
 
 app.listen(process.env.PORT);
